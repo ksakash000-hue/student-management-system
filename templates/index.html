@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body { font-family: Arial; background:#f4f6f8; padding:20px; }
+        .container { max-width:900px; margin:auto; background:#fff; padding:20px; border-radius:8px; }
+        input, button { padding:10px; width:100%; margin:5px 0; }
+        button { background:#007bff; color:#fff; border:none; }
+        table { width:100%; border-collapse:collapse; margin-top:15px; }
+        th, td { border:1px solid #ccc; padding:8px; text-align:center; }
+        .del { background:red; }
+        .edit { background:green; }
+        form.inline { display:inline; }
+    </style>
+</head>
+<body>
+<h1 align="center">Student Management System</h1>
+<div class="container">
+<form method="post" action="/add">
+    <input name="name" placeholder="Name" required>
+    <input name="branch" placeholder="Branch" required>
+    <input name="semester" placeholder="Semester" required>
+    <button>Add Student</button>
+</form>
+
+<form method="post" action="/search">
+    <input name="query" placeholder="Search">
+</form>
+
+<table>
+<tr><th>ID</th><th>Name</th><th>Branch</th><th>Semester</th><th>Actions</th></tr>
+{% for s in students %}
+<tr>
+<td>{{s.id}}</td>
+<td>{{s.name}}</td>
+<td>{{s.branch}}</td>
+<td>{{s.semester}}</td>
+<td>
+<form class="inline" method="post" action="/edit/{{s.id}}">
+<input name="name" value="{{s.name}}" required>
+<input name="branch" value="{{s.branch}}" required>
+<input name="semester" value="{{s.semester}}" required>
+<button class="edit">Update</button>
+</form>
+<a href="/delete/{{s.id}}"><button class="del">Delete</button></a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
