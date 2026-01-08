@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks</title>
+</head>
+<body>
+    <h2>Marks</h2>
+
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        {% for r in records %}
+        <tr>
+            <td>{{ r.subject }}</td>
+            <td>{{ r.marks }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back</a>
+</body>
+</html>

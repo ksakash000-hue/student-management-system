@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Students</h2>
+<form method="post" action="/add">
+<input name="name" placeholder="Name" required>
+<input name="branch" placeholder="Branch" required>
+<input name="semester" placeholder="Semester" required>
+<button>Add</button>
+</form>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2>Student Management System</h2>
+
+<form method="get" class="search-form">
+    <input type="text" name="name" placeholder="Search by name">
+
+    <select name="branch">
+        <option value="">All Branches</option>
+        {% for b in branches %}
+            <option value="{{ b.branch }}">{{ b.branch }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="semester">
+        <option value="">All Semesters</option>
+        {% for i in range(1,9) %}
+            <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Search</button>
+    <a href="/">Reset</a>
+</form>
+<table border=1>
+{% for s in students %}
+<tr>
+<td>{{s.name}}</td><td>{{s.branch}}</td><td>{{s.semester}}</td>
+<td><a href="/attendance/{{s.id}}">Add Attendance</a> | 
+<a href="/attendance/view/{{s.id}}">View Attendance</a>
+</td>
+<td><a href="/marks/{{s.id}}">Add Marks</a> |
+<td><a href="/marks/view/{{s.id}}">View Marks</a></td>
+</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
