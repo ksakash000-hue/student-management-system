@@ -1,0 +1,59 @@
+# Advanced Student Management System
+
+An academic web application built using **Flask (Python)** and **MySQL** to manage student records, attendance, and marks through a simple web interface.
+
+## Features
+- Add, view, and delete student records
+- Attendance management (Present / Absent)
+- Marks management (subject-wise)
+- View attendance and marks history
+- Search students by name
+- Filter students by branch and semester
+- Clean UI using HTML, CSS, and Jinja templates
+
+## Technologies Used
+Python (Flask), MySQL, HTML, CSS, Jinja2, VS Code, GitHub
+
+## Project Structure
+Advanced_Student_Management_System/
+- app.py  
+- static/style.css  
+- templates/index.html  
+- templates/attendance.html  
+- templates/marks.html  
+- templates/view_attendance.html  
+- templates/view_marks.html  
+- database.sql  
+- requirements.txt  
+
+## How to Run
+1. Clone repository  
+   `git clone https://github.com/your-username/Advanced_Student_Management_System.git`
+
+2. Create virtual environment  
+   `python3 -m venv venv`  
+   `source venv/bin/activate`
+
+3. Install dependencies  
+   `pip install -r requirements.txt`
+
+4. Setup MySQL database  
+   `mysql -u root -p`  
+   `SOURCE database.sql;`
+
+5. Update MySQL credentials in `app.py`
+
+6. Run application  
+   `python app.py`
+
+7. Open browser  
+   `http://127.0.0.1:5000`
+
+## Purpose
+This project is developed for academic use to demonstrate Flask backend development, MySQL database integration, CRUD operations, and server-side rendering using Jinja templates.
+
+## Author
+Akash
+
+## License
+Educational use only.
