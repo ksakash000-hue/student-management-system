@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Edit Student</h2>
+
+    <form method="POST">
+        <input type="text" name="name" value="{{ student.name }}" required>
+        <input type="text" name="branch" value="{{ student.branch }}" required>
+        <input type="number" name="semester" value="{{ student.semester }}" required>
+        <button type="submit">Update</button>
+    </form>
+
+    <br>
+    <a href="/">⬅ Back</a>
+</div>
+</body>
+</html>

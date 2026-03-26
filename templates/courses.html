@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Courses</h2>
+<a href="/add_course">➕ Add Course</a>
+<br><br>
+    <ul>
+        {% for c in courses %}
+            <li>
+              
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">⬅ Back</a>
+</div>
+</body>
+</html> 

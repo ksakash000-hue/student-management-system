@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Faculty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Add Faculty</h2>
+
+    <form method="POST">
+        <input type="text" name="faculty_name" placeholder="Faculty Name" required>
+        <input type="text" name="department" placeholder="Department" required>
+        <button type="submit">Add Faculty</button>
+    </form>
+
+    <h3>Existing Faculty</h3>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+        {% for f in faculty %}
+        <tr>
+            <td>{{ f.faculty_id }}</td>
+            <td>{{ f.faculty_name }}</td>
+            <td>{{ f.department }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Back to Home</a>
+</div>
+</body>
+</html>

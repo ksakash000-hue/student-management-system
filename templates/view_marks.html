@@ -1,0 +1,18 @@
+<h2>Marks</h2>
+
+<table border="1">
+    <tr>
+        <th>Course</th>
+        <th>Marks</th>
+    </tr>
+
+    {% for r in records %}
+    <tr>
+        <td>{{ r.course_name }}</td>
+        <td>{{ r.marks }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">Back</a>

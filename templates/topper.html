@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Performing Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>🏆 Top Performing Student</h2>
+
+    {% if record %}
+        <table>
+            <tr>
+                <th>Student Name</th>
+                <th>Average Marks</th>
+            </tr>
+            <tr>
+                <td>{{ record.name }}</td>
+                <td>{{ "%.2f"|format(record.avg_marks) }}</td>
+            </tr>
+        </table>
+    {% else %}
+        <p>No marks data available.</p>
+    {% endif %}
+
+    <br>
+    <a href="/">⬅ Back</a>
+</div>
+</body>
+</html>

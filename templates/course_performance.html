@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Performance</title>
+</head>
+<body>
+
+<h2>Course Performance - {{ course.course_name }}</h2>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Student Name</th>
+        <th>Average Marks</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.name }}</td>
+        <td>{{ row.avg_marks }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Student Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Course & Faculty Details</h2>
+
+   <h3>Filter Students</h3>
+
+<form method="GET">
+
+    <input type="text" name="name" placeholder="Student Name">
+
+    <select name="branch">
+        <option value="">All Branch</option>
+        {% for b in branches %}
+        <option value="{{ b.branch }}">{{ b.branch }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="semester">
+        <option value="">All Semester</option>
+        {% for s in semesters %}
+        <option value="{{ s.semester }}">{{ s.semester }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="course">
+        <option value="">All Course</option>
+        {% for c in courses %}
+        <option value="{{ c.course_name }}">{{ c.course_name }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="faculty">
+        <option value="">All Faculty</option>
+        {% for f in faculties %}
+        <option value="{{ f.faculty_name }}">{{ f.faculty_name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Filter</button>
+</form>
+
+<hr>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Semester</th>
+        <th>Course</th>
+        <th>Faculty</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.name }}</td>
+        <td>{{ row.branch }}</td>
+        <td>{{ row.semester }}</td>
+        <td>{{ row.course_name if row.course_name else "Not Enrolled" }}</td>
+        <td>{{ row.faculty_name if row.faculty_name else "Not Assigned" }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<a href="/" class="back-btn">← Back</a>
+
+</body>
+</html>

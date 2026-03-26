@@ -1,0 +1,98 @@
+/* ===== Body Background ===== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* ===== Container ===== */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ===== Form Styling ===== */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input,
+form select {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 8px 15px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #5a67d8;
+}
+
+/* ===== Table Styling ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+table th {
+    background: #667eea;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background: #f3f4f6;
+}
+
+/* ===== Links ===== */
+a {
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 6px 12px;
+    background: #764ba2;
+    color: white;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background: #5b3c8a;
+}
